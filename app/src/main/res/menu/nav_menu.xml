@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/prof"
+            android:icon="@drawable/icon_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/qrscan"
+            android:icon="@drawable/icon_scanner"
+            android:title="QR-Scan" />
+        <item
+            android:id="@+id/attend"
+            android:icon="@drawable/icon_attendance"
+            android:title="Attendance" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/icon_aboutus"
+            android:title="About Us" />
+    </group>
+    <item android:title="Communication">
+        <menu>
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/icon_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/feed"
+                android:icon="@drawable/icon_feedback"
+                android:title="FeedBack" />
+        </menu>
+
+    </item>
+
+</menu>
