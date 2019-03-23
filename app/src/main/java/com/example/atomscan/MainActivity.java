@@ -25,6 +25,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private  IntentResult intentResult;
     private boolean isClicked = false;
 
+    private void shareAction(){
+        Intent myIntent = new Intent(Intent.ACTION_SEND);
+        myIntent.setType("text/link");
+        String subject = "App Link:";
+
+        ///////////////////////////////////////////////////
+
+        String link = "akhileshtheapp.herokuapp.com";
+
+        //////////////////////////////////////////////////
+
+        myIntent.putExtra(Intent.EXTRA_SUBJECT,subject);
+        myIntent.putExtra(Intent.EXTRA_TEXT,link);
+        startActivity(Intent.createChooser(myIntent,"Share To"));
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
@@ -43,9 +59,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.share:
                 Toast.makeText(MainActivity.this,"Sharing...",Toast.LENGTH_LONG).show();
+                shareAction();
                 break;
             case R.id.feed:
                 Toast.makeText(MainActivity.this,"Getting FeedBack...",Toast.LENGTH_LONG).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FeedFragment()).commit();
                 break;
 
         }
@@ -124,7 +142,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else {
             super.onBackPressed();
         }
-
-
     }
 }

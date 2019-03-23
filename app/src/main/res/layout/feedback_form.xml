@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingEnd="10dp"
+    android:paddingStart="10dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/backtheme"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/feedback_icon_round"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/outline"
+        android:padding="20dp"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:text="Rating For Us :"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    />
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/feedback_rating"
+                    android:layout_marginBottom="10dp"
+                    android:numStars="5"
+                    android:stepSize="0.5"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:visibility="invisible"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/rating_response"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:text="FeedBack For (Developer) :"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/feedback_spinner"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginBottom="30dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:text="Comments"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/feedback_comment"
+                    android:hint="Any Suggestions?"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:layout_marginBottom="40dp"
+                    />
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"
+                    android:layout_gravity="center"
+                    android:text="Submit"
+                    android:background="@drawable/btn_back"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/feedback_submit_btn"
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

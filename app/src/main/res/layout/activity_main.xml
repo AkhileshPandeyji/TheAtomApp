@@ -70,9 +70,13 @@
 
                 <Button
                     android:id="@+id/scanBtn"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:text="Scan" />
+                    android:text="Scan"
+                    android:background="@drawable/btn_back"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    />
             </LinearLayout>
             </LinearLayout>
 
