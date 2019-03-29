@@ -1,41 +1,39 @@
 package com.example.atomscan;
 
-import android.content.Intent;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText enrol;
-    private  EditText pass;
-    private Button loginBtn;
+    private String enrolTxt;
+    private String passTxt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        enrol = (EditText) findViewById(R.id.enrol);
-        pass = (EditText) findViewById(R.id.pass);
-        loginBtn = (Button) findViewById(R.id.loginBtn);
+        EditText enrol = findViewById(R.id.enrol);
+        EditText pass = findViewById(R.id.pass);
+        Button loginBtn = findViewById(R.id.loginBtn);
 
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                String enrolTxt = enrol.getText().toString().trim();
-                String passTxt = pass.getText().toString().trim();
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("enrol",enrolTxt);
-                intent.putExtra("pass",passTxt);
-                startActivity(intent);
-            }
+
+
+        loginBtn.setOnClickListener(v -> {
+            enrolTxt = enrol.getText().toString().trim();
+            passTxt = pass.getText().toString().trim();
+
+            DatabaseCon databaseCon = new DatabaseCon(LoginActivity.this);
+            databaseCon.execute("http://192.168.0.7:10080/login.php",enrolTxt,passTxt);
         });
 
 
-
     }
+
+
 }

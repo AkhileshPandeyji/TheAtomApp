@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (scantxt != null && !scantxt.isEmpty()) {
                     Toast.makeText(MainActivity.this, scantxt, Toast.LENGTH_LONG).show();
 
+
                 } else {
                     Toast.makeText(MainActivity.this, "Failed!!", Toast.LENGTH_LONG);
                 }
